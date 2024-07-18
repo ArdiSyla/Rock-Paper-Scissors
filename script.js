@@ -1,3 +1,15 @@
+const rockButton = document.getElementById("rock");
+const paperButton = document.getElementById("paper");
+const scissorsButton = document.getElementById("scissors");
+const resultsDiv = document.getElementById("results");
+const scoreDiv = document.getElementById("score");
+
+let humanScore = 0;
+let computerScore = 0;
+
+
+
+
 function getComputerChoice() {
     const randomNum = Math.random();
     if (randomNum < 0.35) {
@@ -46,8 +58,7 @@ function playRound(humanChoice, computerChoice) {
 
 
 // function playGame() {
-//     let humanScore = 0;
-//     let computerScore = 0;
+
 
 //     for (let round = 1; round <= 5; round++) {
 //         console.log(`Round ${round}:`);
