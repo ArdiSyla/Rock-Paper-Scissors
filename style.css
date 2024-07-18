@@ -1,0 +1,82 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #282c34;
+    color: #61dafb;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #ffffff;
+    margin-top: 20px;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+button {
+    font-size: 2em;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border: 2px solid #61dafb;
+    border-radius: 50%;
+    background-color: #282c34;
+    color: #61dafb;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+button:hover {
+    background-color: #61dafb;
+    color: #282c34;
+}
+
+button:active {
+    background-color: #21a1f1;
+    color: #282c34;
+}
+
+#play-again {
+    border-radius: 10px; /* Square shape */
+    width: 150px; /* Adjust width for square shape */
+    height: 50px; /* Adjust height for square shape */
+    background-color: #61dafb;
+    color: #282c34;
+    font-size: 1.2em;
+    margin-top: 20px; /* Space above Play Again button */
+}
+
+#play-again:hover {
+    background-color: #21a1f1;
+    color: #282c34;
+}
+
+#results, #score {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    display: inline-block;
+}
+
+#score {
+    font-size: 1.2em;
+}
