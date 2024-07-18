@@ -52,13 +52,13 @@ button:active {
 }
 
 #play-again {
-    border-radius: 10px; /* Square shape */
-    width: 150px; /* Adjust width for square shape */
-    height: 50px; /* Adjust height for square shape */
+    border-radius: 10px; 
+    width: 150px; 
+    height: 50px; 
     background-color: #61dafb;
     color: #282c34;
     font-size: 1.2em;
-    margin-top: 20px; /* Space above Play Again button */
+    margin-top: 20px; 
 }
 
 #play-again:hover {
