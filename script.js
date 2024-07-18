@@ -56,3 +56,33 @@ function updateScore() {
 }
 
 
+function handleButtonClick(choice) {
+    const humanChoice = getHumanChoice(choice);
+    if(humanChoice) {
+        const computerChoice = getComputerChoice();
+        const roundWinner = playRound(humanChoice, computerChoice);
+
+        if(roundWinner === "human") {
+            humanScore++;
+        } else if (roundWinner === "computer"); {
+            computerScore++;
+        }
+
+        updateScore();
+
+        if (humanScore >= 5) {
+            resultsDiv.textContent = "Congratulations! You are the winner!";
+            // Disable buttons after the game ends
+            rockButton.disabled = true;
+            paperButton.disabled = true;
+            scissorsButton.disabled = true;
+        } else if (computerScore >= 5) {
+            resultsDiv.textContent = "Sorry! The computer is the winner.";
+            // Disable buttons after the game ends
+            rockButton.disabled = true;
+            paperButton.disabled = true;
+            scissorsButton.disabled = true;
+        }
+
+    }
+}
