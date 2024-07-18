@@ -32,21 +32,21 @@ function getHumanChoice(choice) {
 
 
 function playRound(humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase();
 
     if (humanChoice === computerChoice) {
-        console.log("It's a tie! Both chose " + humanChoice);
+        resultsDiv.textContent = "It's a tie! Both chose " + humanChoice;
         return "tie";
     } else if (
         (humanChoice === "rock" && computerChoice === "scissors") ||
         (humanChoice === "paper" && computerChoice === "rock") ||
         (humanChoice === "scissors" && computerChoice === "paper")
     ) {
-        console.log("You win! " + humanChoice + " beats " + computerChoice);
-        return "human";
+          resultsDiv.textContent = "You win! " + humanChoice + " beats " + computerChoice;
+        return "human"
     } else {
-        console.log("You lose! " + computerChoice + " beats " + humanChoice);
+        resultsDiv.textContent = "You lose! " + computerChoice + " beats " + humanChoice;
         return "computer";
+
     }
 }
 
