@@ -1,6 +1,7 @@
 const rockButton = document.getElementById("rock");
 const paperButton = document.getElementById("paper");
 const scissorsButton = document.getElementById("scissors");
+const playAgainButton = document.getElementById("play-again");
 const resultsDiv = document.getElementById("results");
 const scoreDiv = document.getElementById("score");
 
@@ -87,6 +88,17 @@ function disableButtons() {
     scissorsButton.disabled = true;
 }
 
+function resetGame() {
+    humanScore = 0;
+    computerScore = 0;
+    updateScore(); // Reset the score display
+    resultsDiv.textContent = ""; // Clear the results display
+    rockButton.disabled = false;
+    paperButton.disabled = false;
+    scissorsButton.disabled = false;
+}
+
 rockButton.addEventListener('click', () => handleButtonClick('rock'));
 paperButton.addEventListener('click', () => handleButtonClick('paper'));
 scissorsButton.addEventListener('click', () => handleButtonClick('scissors'));
+playAgainButton.addEventListener('click', resetGame);
