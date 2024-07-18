@@ -6,6 +6,7 @@ const scoreDiv = document.getElementById("score");
 
 let humanScore = 0;
 let computerScore = 0;
+const winningScore = 5;
 
 function getComputerChoice() {
     const randomNum = Math.random();
@@ -58,35 +59,34 @@ function updateScore() {
 
 function handleButtonClick(choice) {
     const humanChoice = getHumanChoice(choice);
-    if(humanChoice) {
+    if(humanChoice && humanScore < winningScore && computerScore < winningScore) {
         const computerChoice = getComputerChoice();
-        const roundWinner = playRound(humanChoice, computerChoice);
+        const roundWinner = playRound(choice, computerChoice);
 
         if(roundWinner === "human") {
             humanScore++;
-        } else if (roundWinner === "computer"); {
+        } else if (roundWinner === "computer") {
             computerScore++;
         }
 
         updateScore();
 
-        if (humanScore >= 5) {
+        if (humanScore >= winningScore) {
             resultsDiv.textContent = "Congratulations! You are the winner!";
-            // Disable buttons after the game ends
-            rockButton.disabled = true;
-            paperButton.disabled = true;
-            scissorsButton.disabled = true;
-        } else if (computerScore >= 5) {
+            disableButtons();
+        } else if (computerScore >= winningScore) {
             resultsDiv.textContent = "Sorry! The computer is the winner.";
-            // Disable buttons after the game ends
-            rockButton.disabled = true;
-            paperButton.disabled = true;
-            scissorsButton.disabled = true;
+            disableButtons();
         }
-
     }
 }
 
-document.getElementById('rock').addEventListener('click', () => playRound('rock', getComputerChoice()));
-document.getElementById('paper').addEventListener('click', () => playRound('paper', getComputerChoice()));
-document.getElementById('scissors').addEventListener('click', () => playRound('scissors', getComputerChoice()));
+function disableButtons() {
+    rockButton.disabled = true;
+    paperButton.disabled = true;
+    scissorsButton.disabled = true;
+}
+
+rockButton.addEventListener('click', () => handleButtonClick('rock'));
+paperButton.addEventListener('click', () => handleButtonClick('paper'));
+scissorsButton.addEventListener('click', () => handleButtonClick('scissors'));
