@@ -86,3 +86,7 @@ function handleButtonClick(choice) {
 
     }
 }
+
+document.getElementById('rock').addEventListener('click', () => playRound('rock', getComputerChoice()));
+document.getElementById('paper').addEventListener('click', () => playRound('paper', getComputerChoice()));
+document.getElementById('scissors').addEventListener('click', () => playRound('scissors', getComputerChoice()));
