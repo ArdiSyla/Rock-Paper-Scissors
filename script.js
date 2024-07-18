@@ -7,9 +7,6 @@ const scoreDiv = document.getElementById("score");
 let humanScore = 0;
 let computerScore = 0;
 
-
-
-
 function getComputerChoice() {
     const randomNum = Math.random();
     if (randomNum < 0.35) {
@@ -18,18 +15,15 @@ function getComputerChoice() {
         return "paper";
     }else {
         return "scissors";
-    }
-    
+    } 
 }
 
 
-function getHumanChoice() {
-    const userChoice = prompt("Enter your choice(rock, paper or scissors):");
-    if (userChoice === "rock" || userChoice === "paper" || userChoice === "scissors" ||
-        userChoice.toLowerCase() === "rock" || userChoice.toLowerCase() === "paper" || userChoice.toLowerCase() === "scissors") {
-        return userChoice.toLowerCase();
+function getHumanChoice(choice) {
+    if (choice === "rock" || choice === "paper" || choice === "scissors") {
+        return choice;
     }else {
-        console.log("Invalid choice. {Please enter rock, paper or scissors.");
+        resultsDiv.textContent ="Invalid choice";
         return null;
     }   
 }
